@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <style>
+    .input-field {
+      background-color: #F7F7F8;
+      border: 1px solid #E0E0E0;
+      padding: 10px;
+    }
+    .icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    .icon:hover {
+      color: #ffcc00;
+      transition: color 0.3s;
+    }
+    .toggle-checkbox:checked + .toggle-checkbox:before {
+      transform: translateX(100%);
+    }
+    .toggle-checkbox {
+      display: none;
+    }
+    .menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: calc(100vh - 4rem);
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+<div class="flex flex-col md:flex-row min-h-screen">
+  <!-- Sidebar -->
+  <div id="sidebar" class="w-full md:w-64  shadow-md flex flex-col justify-between">
+    <div>
+      <div class="flex items-center p-4 border-b">
+        <div class="w-10 h-10 bg-yellow-500 m-1 rounded-full"></div>
+        <span class="text-xl font-bold ">How <strong class="text-yellow-500">Bee</strong></span>
+      </div>
+      <div id="menu" class="menu h-full flex flex-col md:block">
+        <h2 class="text-xl font-bold p-4">MENU</h2>
+        <ul class="space-y-4 p-4">
+          <li><a href="#" class="flex items-center text-zinc-600 space-x-3 hover:text-zinc-900"><i class="material-icons">bar_chart</i><span>Dashboard</span></a></li>
+          <li><a href="#" class="flex items-center text-zinc-600 space-x-3 hover:text-zinc-900"><i class="material-icons">accessibility_new</i><span>Posture Routine</span></a></li>
+          <li><a href="#" class="flex items-center text-zinc-600 space-x-3 hover:text-zinc-900"><i class="material-icons">school</i><span>Classroom</span></a></li>
+          <li><a href="#" class="flex items-center text-zinc-600 space-x-3 hover:text-zinc-900"><i class="material-icons">calendar_today</i><span>Calendar</span></a></li>
+          <li><a href="#" class="flex items-center text-zinc-600 space-x-3 hover:text-zinc-900"><i class="material-icons">music_note</i><span>Music</span></a></li>
+          <li><a href="#" class="flex items-center text-zinc-600 space-x-3 hover:text-zinc-900"><i class="material-icons">mic</i><span>Recordings</span></a></li>
+          <li><a href="#" class="flex items-center text-zinc-600 space-x-3 hover:text-zinc-900"><i class="material-icons">account_balance_wallet</i><span>Earnings</span></a></li>
+          <li><a href="#" class="flex items-center text-zinc-600 space-x-3 hover:text-zinc-900"><i class="material-icons">settings</i><span>Settings</span></a></li>
+        </ul>
+        
+      </div>
+      
+    </div>
+    <div class="p-4 space-y-4">
+      <ul class="space-y-4">
+        <li><a href="#" class="flex items-center text-zinc-600 space-x-3 hover:text-zinc-900"><i class="material-icons">help</i><span>Help and Support</span></a></li>
+        <li><a href="#" class="flex items-center text-zinc-600 space-x-3 hover:text-zinc-900"><i class="material-icons">logout</i><span>Logout</span></a></li>
+      </ul>
+    </div>
+    
+  </div>
+  <span class="material-icons absolute text-zinc-600 right-0 m-9">notifications</span>
+
+  <!-- Main Content -->
+  <div class="flex-1 p-0">
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <h1 class="relative text-2xl font-bold mb-4"><i class="relative ml-4 top-4 material-icons icon">edit</i> Profile</h1>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Column 1 -->
+        <div class="col-span-1 text-center lg:text-left">
+          <img class="w-32 h-32 rounded-full mx-auto" src="avatar.jpg" alt="Profile Picture of Mehrab Bozorgi">
+          <div class="mt-6">
+            <h2 class="text-xl font-bold mb-2">About</h2>
+            <textarea class="w-full h-64 input-field rounded-md" placeholder="Mehrab Bozorgi"></textarea>
+          </div>
+          <div class="mt-6">
+            <h2 class="text-xl font-bold mb-2">Pricing</h2>
+            <table class="w-full border rounded-md">
+              <tr class="border-b">
+                <td class="p-2">Thrice a week</td>
+                <td class="p-2">$___</td>
+              </tr>
+              <tr class="border-b">
+                <td class="p-2">Twice a week</td>
+                <td class="p-2">$___</td>
+              </tr>
+              <tr class="border-b">
+                <td class="p-2">Monday to Friday</td>
+                <td class="p-2">$___</td>
+              </tr>
+              <tr>
+                <td class="p-2">Friday Batch</td>
+                <td class="p-2">$___</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- Column 2 -->
+        <div class="col-span-1 lg:col-span-2 ml-4 mr-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="md:col-span-2 relative">
+              <label class="block text-gray-600">Name</label>
+              <input type="text" placeholder="Mehrab Bozorgi" class="w-full input-field rounded-md">
+            </div>
+            <div class="md:col-span-2 relative">
+              <label class="block text-gray-600">Email</label>
+              <div class="flex items-center">
+                <input type="email" placeholder="Mehrabbozorgi.business@gmail.com" class="w-full input-field rounded-md">
+                <input type="checkbox" id="email-toggle" class="absolute right-0 top-6 w-5 h-5 mt-3 mr-3">
+              </div>
+            </div>
+            <div class="md:col-span-2 relative">
+              <label class="block text-gray-600">Contact Number</label>
+              <input type="text" placeholder="58077.79" class="w-full input-field rounded-md">
+            </div>
+            <div class="relative">
+              <label class="block text-gray-600">Gender</label>
+              <select class="w-full input-field rounded-md">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="relative">
+              <label class="block text-gray-600">DOB</label>
+              <input type="date" class="w-full input-field rounded-md">
+            </div>
+            <div class="md:col-span-2 relative">
+              <label class="block text-gray-600">User ID</label>
+              <input type="text" placeholder="33062 Zboncak isle" class="w-full input-field rounded-md">
+            </div>
+            <div class="md:col-span-2 relative">
+              <label class="block text-gray-600">Password</label>
+              <div class="flex items-center relative">
+                <input type="password" id="password" placeholder="sbdfbnd65sf dvb s" class="w-full input-field rounded-md pr-10">
+                <i class="material-icons icon cursor-pointer absolute right-0 top-3 mt-3 mr-3" id="toggle-password">visibility</i>
+              </div>
+            </div>
+            <div class="md:col-span-2 relative">
+              <label class="block text-gray-600">Classes Per Month</label>
+              <input type="text" placeholder="8-12" class="w-full input-field rounded-md">
+            </div>
+            <div class="md:col-span-2 relative">
+              <label class="block text-gray-600">Maximum Students</label>
+              <input type="text" placeholder="5" class="w-full input-field rounded-md">
+            </div>
+            <div class="md:col-span-2 relative">
+              <label class="block text-gray-600">Pay Rate</label>
+              <input type="text" placeholder="$15" class="w-full input-field rounded-md">
+            </div>
+          </div>
+          <div class="flex justify-end mr-9 mt-9 space-x-4">
+            <button class=" text-yellow-500 border-2 border-yellow-500 py-2 px-4 rounded-md">Cancel</button>
+            <button class="bg-yellow-500 text-white py-2 px-4 rounded-md">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const togglePassword = document.getElementById('toggle-password');
+  const passwordField = document.getElementById('password');
+
+  togglePassword.addEventListener('click', () => {
+    const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordField.setAttribute('type', type);
+    togglePassword.textContent = type === 'password' ? 'visibility' : 'visibility_off';
+  });
+
+  const emailToggle = document.getElementById('email-toggle');
+  const emailInput = document.querySelector('input[type="email"]');
+</script>
+
+</body>
+</html>

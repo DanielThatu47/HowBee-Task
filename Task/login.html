@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .input-field {
+            background-color: #F7F7F8;
+            border: 1px solid #E0E0E0;
+            padding: 10px;
+        }
+
+        .icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <div class="flex flex-col items-center mb-6">
+            <img class="w-32 h-32 rounded-full mx-auto" src="avatar.jpg" alt="Profile Picture of Mehrab Bozorgi">
+            <h2 class="text-2xl font-semibold">Log in</h2>
+        </div>
+        <div class="flex justify-between mb-4 space-x-2">
+            <button class="flex items-center justify-center w-1/2 bg-gray-200 p-2 rounded-lg">
+                <i class="fa-brands fa-google mr-2"></i>
+                Google
+            </button>
+            <button class="flex items-center justify-center w-1/2 bg-gray-200 p-2 rounded-lg">
+                <i class="fa-brands fa-facebook mr-2 "></i>
+                Facebook
+            </button>
+        </div>
+        <div class="flex items-center mb-4">
+            <div class="flex-grow border-t border-gray-300"></div>
+            <span class="px-2 text-gray-500">Or</span>
+            <div class="flex-grow border-t border-gray-300"></div>
+        </div>
+        <form>
+            <div class="mb-4">
+                <label class="block text-gray-700 mb-2" for="email">Email Address</label>
+                <input class="w-full p-2 border border-gray-300 rounded-lg" type="email" id="email"
+                    placeholder="example@gmail.com" />
+            </div>
+            <div class="relative mb-4">
+                <label class="block text-gray-700 mb-2" for="password">Password</label>
+                <input class="w-full p-2 border border-gray-300 rounded-lg pr-10" type="password" id="password"
+                    placeholder="********" />
+                    <i class="material-icons icon cursor-pointer mt-4 ml-4" id="toggle-password">visibility</i>
+                </div>
+            <div class="flex items-center justify-between mb-6">
+                <label class="flex items-center text-gray-700">
+                    <input type="checkbox" class="mr-2">
+                    Remember me
+                </label>
+                <a href="#" class="text-blue-500">Reset Password?</a>
+            </div>
+            <button class="w-full bg-yellow-500 text-white p-2 rounded-lg">Log in</button>
+        </form>
+        <div class="text-center mt-6">
+            <p class="text-gray-700">Don't have an account yet? <a href="SignUp.html" class="text-blue-500">
+                    Create One</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('toggle-password').addEventListener('click', function () {
+            var passwordInput = document.getElementById('password');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                this.textContent = 'visibility_off'; // Change icon to 'visibility_off' when showing password
+            } else {
+                passwordInput.type = 'password';
+                this.textContent = 'visibility'; // Change icon to 'visibility' when hiding password
+            }
+        });
+    </script>
+</body>
+
+</html>
